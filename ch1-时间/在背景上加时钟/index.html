@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>在背景上加时钟</title>
+<style>
+body,div,img{
+	margin:0;
+	padding:0;}
+img{
+	width:100%;
+	height:100%;
+	position:absolute;
+	z-index:-1;
+	}
+#show{
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	height:200px;
+	width:400px;
+	font-size:80px;
+	text-align:center;
+	line-height:200px;
+	
+	color:#00D9D9;
+	text-shadow:#09F 2px 2px;
+	}
+</style>
+</head>
+	
+<body>
+	<img src="background.jpg"/>
+	<div id="show"></div>
+    
+<script> 
+var showPlace=document.getElementsByTagName("div")[0];
+var nowTime=new Date();
+//获取当前时间的时分秒
+var hour=nowTime.getHours(),showhour=nowTime.getHours(),
+	minute=nowTime.getMinutes(),showminute=nowTime.getMinutes(),
+	second=nowTime.getSeconds(),showsecond=nowTime.getSeconds();
+var timer=null;
+var showType=24;
+showTime(showType);
+
+//每隔一秒改变时间
+timer=setInterval(function(){
+		second++;
+		if(second==60){
+			minute++;second=0;
+			if(minute==60){
+				hour++;minute=0;
+				if(hour==24){
+					hour=0;
+				}
+			}
+		}
+		showTime(showType);
+	},1000);
+//时间显示
+function showTime(showType){
+	if(second<10){showsecond="0"+second;}else{showsecond=second;}
+	if(minute<10){showminute="0"+minute;}else{showminute=minute;}
+	if(hour<10){showhour="0"+hour;}else{showhour=hour;}
+	showPlace.innerHTML=showhour+":"+showminute+":"+showsecond;
+	return showPlace;
+	}
+
+</script>
+</body>
+</html>

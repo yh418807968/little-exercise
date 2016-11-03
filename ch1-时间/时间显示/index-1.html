@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>显示时钟</title>
+</head>
+
+<body>
+<h3>时间篇-时间显示</h3>
+<button>切换至12小时制</button>
+<hr/>
+<h5></h5>
+<script> 
+var showPlace=document.getElementsByTagName("h5")[0];
+var btn=document.getElementsByTagName("button")[0];
+var nowTime=new Date();
+//获取当前时间的时分秒
+var hour=nowTime.getHours(),showhour=nowTime.getHours(),
+	minute=nowTime.getMinutes(),showminute=nowTime.getMinutes(),
+	second=nowTime.getSeconds(),showsecond=nowTime.getSeconds();
+var timer=null;
+var showType=24;
+showTime(showType);
+
+//每隔一秒改变时间
+timer=setInterval(function(){
+		second++;
+		if(second==60){
+			minute++;second=0;
+			if(minute==60){
+				hour++;minute=0;
+				if(hour==24){
+					hour=0;
+				}
+			}
+		}
+		showTime(showType);
+	},1000);
+//时间显示
+function showTime(showType){
+	if(second<10){showsecond="0"+second;}else{showsecond=second;}
+	if(minute<10){showminute="0"+minute;}else{showminute=minute;}
+	if(hour<10){showhour="0"+hour;}else{showhour=hour;}
+	switch(showType){
+		case 24:
+			showPlace.innerHTML=showhour+":"+showminute+":"+showsecond;
+			break;
+		case 12:
+			if(showhour<12){
+			showPlace.innerHTML=showhour%12+":"+showminute+":"+showsecond+"AM";
+			}else{
+			showPlace.innerHTML=showhour%12+":"+showminute+":"+showsecond+"PM";	
+			}
+			break;
+	}
+	return showPlace;
+	}
+//btn.onclick=function(){
+//	btn.innerHTML="切换至"+showType+"小时制";
+//	if(showType==24){
+//		showType=12;
+//		
+//	}else{
+//		showType=24;
+//	}
+//	}
+addEventHandler(btn,"click",function(){
+	btn.innerHTML="切换至"+showType+"小时制";
+	if(showType==24){
+		showType=12;
+		
+	}else{
+		showType=24;
+	}
+	});
+//兼容浏览器
+function addEventHandler(ele, event, hanlder) {
+    if (ele.addEventListener) {
+        ele.addEventListener(event, hanlder, false);
+    } else if (ele.attachEvent) {
+        ele.attachEvent("on"+event, hanlder);
+    } else  {
+        ele["on" + event] = hanlder;
+    }
+}
+</script>
+</body>
+</html>

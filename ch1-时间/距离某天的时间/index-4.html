@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>距离某天的时间</title>
+<style>
+input{
+	width:50px;}
+strong{
+	display:inline-block;
+	width:auto;
+	min-width:20px;
+	border-bottom:1px solid #000;
+	text-align:center;
+}
+</style>
+
+</head>
+
+<body>
+<h3>时间篇-时间显示</h3>
+<hr/>
+<span><input type="text" id="yearInput"/>年<input type="text" id="monthInput"/>月<input type="text" id="dayInput"/>日</span><!--
+--><span>已经过去<strong>00</strong>天<strong>00</strong>小时<strong>00</strong>分<strong>00</strong>秒</span>
+<script> 
+var timeInput=document.getElementsByTagName("input");
+var timeShow=document.getElementsByTagName("strong");
+//当前时间
+var nowTime=new Date();
+var now=nowTime.getTime();
+for(var i=0;i<timeInput.length;i++){
+	addEventHandler(timeInput[i],"blur",function(){ 
+	  //过去时间
+	  var pastYear=timeInput[0].value?timeInput[0].value:0,
+		  pastMonth=timeInput[1].value?timeInput[1].value: 1,
+		  pastDay=timeInput[2].value?timeInput[2].value:1;
+	  var pastTime=new Date(Date.parse(pastMonth+"/"+pastDay+"/"+pastYear));
+	  var past=pastTime.getTime();
+	  //相距的时间
+	  var diffMilliseconds=now-past;
+	  timeShow[0].innerHTML=Math.floor(diffMilliseconds/(1000*60*60*24));
+	  timeShow[1].innerHTML=Math.floor(diffMilliseconds%(1000*60*60*24)/(1000*60*60));
+	   timeShow[2].innerHTML=Math.floor((diffMilliseconds%(1000*60*60))/(1000*60));
+	   timeShow[3].innerHTML=Math.floor((diffMilliseconds%(1000*60))/(1000));
+	 
+	});
+}
+	
+//兼容浏览器
+
+function addEventHandler(ele, event, hanlder) {
+    if (ele.addEventListener) {
+        ele.addEventListener(event, hanlder, false);
+    } else if (ele.attachEvent) {
+        ele.attachEvent("on"+event, hanlder);
+    } else  {
+        ele["on" + event] = hanlder;
+    }
+}
+
+</script> 
+</body>
+</html>
