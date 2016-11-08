@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>小鱼游戏</title>
+</head>
+
+<body>
+<canvas id="canvas" style="display:block;margin:0 auto;border:1px solid #999;">
+您的浏览器暂不支持canvas
+</canvas>
+<input type="range" min="0.5" max="3.0" step="0.01" value="1.0" style="display:block;margin:20px auto;width:800px;">
+<canvas id="canvas_word" style="display:none;margin:0 auto;border:1px solid #999;">
+您的浏览器暂不支持canvas
+</canvas>
+<script>
+var canvas=document.getElementById("canvas");
+var context=canvas.getContext("2d");
+var slider=document.getElementsByTagName("input")[0];
+var image=new Image();
+
+var canvas_word=document.getElementById("canvas_word");
+var context_word=canvas_word.getContext("2d");
+
+window.onload=function(){
+	canvas.width=1024;
+	canvas.height=576;
+	
+	var scale=slider.value;
+		
+	 image.src="images/img.jpg";
+	 image.onload=function(){
+		//context.drawImage(image,0,0,1000,500)
+		drawImageByScale(scale);
+		slider.onmousemove=function(){
+			scale=this.value;
+			drawImageByScale(scale);
+			}
+		 }
+	//绘制水印
+	canvas_word.width=400;
+	canvas_word.height=100;
+	context_word.font="bold 50px Arial";
+	context_word.lineWidth="1";
+	context_word.fillStyle='rgba(0,255,255,0.5)';
+	context_word.textBaseline="middle";
+	context_word.fillText("by youhong",20,50);
+}
+function drawImageByScale(scale){
+	var imageWidth=1024*scale;
+	var imageHeight=576*scale;
+	
+	context.clearRect(0,0,canvas.width,canvas.height);
+	var dx=canvas.width/2-imageWidth/2;
+	var dy=canvas.height/2-imageHeight/2;
+	
+	context.drawImage(image,dx,dy,imageWidth,imageHeight );
+	context.drawImage(canvas_word,canvas.width-canvas_word.width,canvas.height-canvas_word.height );
+	}
+</script>
+</body>
+</html>
