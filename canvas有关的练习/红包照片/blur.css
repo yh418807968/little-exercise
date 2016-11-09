@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0px;
+padding:0px;}
+#blur-div{
+	width:1024px;
+	height:576px;
+	margin:0 auto;
+	position:relative;
+	}
+#blur-image{
+	
+	diaplay:block;
+	width:1024px;
+	height:576px;
+	margin:0 auto;
+	filter:blur(5px);
+	-webkit-filter:blur(10px);
+	-moz-filter:blur(5px);
+	-ms-filter:blur(5px);
+	-o-filter:blur(5px);
+	
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index:-1;
+	}
+#canvas{
+	display:block;
+	margin:0 auto;
+	z-index:100;
+	
+	}
+.btn{
+	display:block;
+	position:absolute;
+	z-index:200;
+	width:100px;
+	height:30px;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+	line-height:30px;
+	border-radius:5px;
+	
+	}
+#reset{
+	left:200px;
+	bottom:20px;
+	background:#058;
+	}
+#reset:hover{
+	background:#047;
+	}
+#show{
+	right:200px;
+	bottom:20px;
+	background:#085;
+	}
+#show:hover{
+	background:#074;
+	}
