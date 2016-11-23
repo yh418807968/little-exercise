@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+ *{ margin: 0; padding: 0; text-decoration: none;}
+#container{
+	width:600px;
+	height:400px;
+	overflow:hidden;
+	position:relative;
+	border:2px solid #666;
+	margin:20px auto;
+}
+#list{
+	width:4200px;
+	height:400px;
+	position:absolute;
+	z-index:1;}
+#buttons{
+	position:absolute;
+	z-index:2;
+	bottom:30px;
+	left:240px;
+	height: 10px;
+	width:120px; 
+	}
+#buttons span{
+	display:inline-block;
+	width:10px;
+	height:10px;
+	border:1px solid #999;
+	border-radius:5px;
+	background: #333; 
+	margin-right: 10px;
+	
+	}
+.arrow{
+	position:absolute;
+	width:30px;
+	height:40px;
+	background:#000;
+	opacity:0.5;
+	display:block;
+	z-index:2;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+	font-size:30px;
+	line-height:40px;
+	display:none;
+	}
+#prev{
+	left:20px;
+	top:190px;
+	}
+#next{
+	right:20px;
+	top:190px;
+	}
+#container:hover .arrow{
+	display:block;
+	}
+
+.arrow:hover{
+	opacity:0.8;}
+.selected{
+	background:red !important;}
+</style>
+</head>
+
+<body>
+<div id="container">
+	<div id="list" style="left: -600px;">
+        <img src="images/5.jpg" alt="1"/><!--
+       --><img src="images/1.jpg" alt="1"/><!--
+        --><img src="images/2.jpg" alt="2"/><!--
+        --><img src="images/3.jpg" alt="3"/><!--
+        --><img src="images/4.jpg" alt="4"/><!--
+        --><img src="images/5.jpg" alt="5"/><!--
+      --><img src="images/1.jpg" alt="5"/>
+    </div>
+    <div id="buttons">
+        <span index="1" class="selected"></span><!--
+        --><span index="2"></span><!--
+       --><span index="3"></span><!--
+        --><span index="4"></span><!--
+        --><span index="5"></span>
+    </div>
+     <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+    <a href="javascript:;" id="next" class="arrow">&gt;</a>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
