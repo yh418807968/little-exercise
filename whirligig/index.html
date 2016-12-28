@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{
+	
+	padding:0px;
+	margin:0px;}
+#carousel{
+	/*margin:0 auto;*/
+	position:relative;
+	z-index:0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	margin:20px auto;
+	}
+a{
+	display:inline-block;
+	width:128px;
+	height:auto;
+	text-decoration:none;
+	position:absolute;
+	overflow:visible;
+	}
+img{
+	position:absolute;
+	}
+#title{
+	position:absolute;
+	left:10px;
+	top:15px;
+	font-size:20px;
+	color:#F93;
+	}
+#alt{
+	position:absolute;
+	left:10px;
+	top:50px;
+	font-size:15px;
+	color:white;
+	}
+#btn1{
+	width: 40px;
+	height: 40px;
+	top: 20px; 
+	right: 64px; 
+	position: absolute;
+	background: url("images/rotate-left.png") 0px 0px;
+	}
+#btn1:hover {
+	background-position: 0px 40px;
+	cursor: pointer;
+}
+#btn2{
+	width: 40px;
+	height: 40px;
+	top: 20px; 
+	right: 20px; 
+	position: absolute;
+	background: url("images/rotate-right.png") 0px 0px;
+	}
+#btn2:hover {
+	background-position: 0px 40px;
+	cursor: auto;
+}
+.Ref{
+	
+	transform:rotateX(180deg);
+-ms-transform:rotateX(180deg); 	/* IE 9 */
+-moz-transform:rotateX(180deg); 	/* Firefox */
+-webkit-transform:rotateX(180deg); /* Safari 和 Chrome */
+-o-transform:rotateX(180deg); 
+position:absolute;
+
+
+	}
+</style>
+</head>
+
+<body>
+<div id="maincontent">
+  <div style='background: url("images/bg.jpg"); width: 570px; height: 384px; ' id="carousel">
+  
+  <a id="01" title="Leonardo Da Vinci" href="images/01.jpg" rel="lightbox">
+  <img  class="cloudcarousel" title="Leonardo Da Vinci" alt="Self-portrait in red chalk, circa 1512-1515." src="images/test01.png" width="128" height="164">
+   <!-- <img  class="Ref" title="Leonardo Da Vinci" alt="Self-portrait in red chalk, circa 1512-1515." src="images/test01.png" width="128" height="164">-->
+  </a>
+  
+  <a id="02" title="Mona Lisa" href="images/02.jpg" rel="lightbox">
+  <img class="cloudcarousel" title="Mona Lisa" alt="Oil on cotton wood, circa 1503–1505." src="images/test02.png" width="128" height="164">
+ <!-- <img class="Ref" title="Mona Lisa" alt="Oil on cotton wood, circa 1503–1505." src="images/test02.png" width="128" height="164">-->
+  </a>
+  
+  <a id="03" title="Lady with an Ermine" href="images/03.jpg" rel="lightbox">
+  <img class="cloudcarousel" title="Lady with an Ermine" alt="Oil on wood panel, 1485." src="images/test03.png" width="128" height="164">
+  <!--<img class="Ref" title="Lady with an Ermine" alt="Oil on wood panel, 1485." src="images/test03.png" width="128" height="164">-->
+  </a>
+  
+  <a id="04" title="Madonna of the Yarnwinder" href="images/04.jpg" rel="lightbox">
+  <img class="cloudcarousel" title="Madonna of the Yarnwinder" alt="Oil on canvas, circa 1501." src="images/test04.png" width="128" height="164">
+ <!-- <img class="Ref" title="Madonna of the Yarnwinder" alt="Oil on canvas, circa 1501." src="images/test04.png" width="128" height="164">-->
+  </a>
+  
+  <a id="05" title="Madonna and the Child" href="images/05.jpg" rel="lightbox">
+  <img class="cloudcarousel" title="Madonna and the Child" alt="Oil on canvas (transferred from panel), circa 1490." src="images/test05.png" width="128" height="164">
+ <!--  <img class="Ref" title="Madonna and the Child" alt="Oil on canvas (transferred from panel), circa 1490." src="images/test05.png" width="128" height="164">-->
+  </a>
+  
+  <a id="06" title="Bacchus" href="images/06.jpg" rel="lightbox">
+  <img class="cloudcarousel" title="Bacchus" alt="Oil on walnut panel transferred to canvas, circa 1510–1515." src="images/test06.png" width="128" height="164">
+<!--  <img class="Ref" title="Bacchus" alt="Oil on walnut panel transferred to canvas, circa 1510–1515." src="images/test06.png" width="128" height="164">-->
+  </a>
+  
+  <a id="07" title="Madonna of the Carnation" href="images/07.jpg" rel="lightbox">
+  <img class="cloudcarousel" title="Madonna of the Carnation" alt="Oil on panel, circa 1478–1480." src="images/test07.png" width="128" height="164">
+ <!-- <img class="Ref" title="Madonna of the Carnation" alt="Oil on panel, circa 1478–1480." src="images/test07.png" width="128" height="164">-->
+  </a>
+  
+  <a id="08"  title="The Virgin and Child with St. anne and St. John the Baptist" href="images/08.jpg" rel="lightbox">
+  <img class="cloudcarousel" title="The Virgin and Child with St. anne and St. John the Baptist" alt="&#10;Charcoal, black and white chalk on tinted paper, circa 1499–1500." 
+src="images/test08.png" width="128" height="164">
+<!--<img class="Ref" title="The Virgin and Child with St. anne and St. John the Baptist" alt="&#10;Charcoal, black and white chalk on tinted paper, circa 1499–1500." 
+src="images/test08.png" width="128" height="164">-->
+</a>
+
+    <a id="09" title="The Virgin and Child with St. anne" href="images/09.jpg" rel="lightbox">
+    <img class="cloudcarousel" title="The Virgin and Child with St. anne" alt="Oil on panel, circa 1510." src="images/test09.png" width="128" height="164">
+    <!--<img class="Ref" title="The Virgin and Child with St. anne" alt="Oil on panel, circa 1510." src="images/test09.png" width="128" height="164">-->
+    
+    </a>
+    <!-- ************************* -->
+    <!-- ************************ -->
+    <div id="title"></div>
+    <div id="alt"></div>
+    <div  id="btn1" class="carouselLeft"></div>
+    <div  id="btn2" class="carouselRight"></div>
+  </div>
+</div>
+<script src="js/jquery-3.1.0.js"></script>
+<script  src="js/jquery.easing.min.js"></script> 
+<script src="js/main.js"></script>
+
+</body>
+</html>
