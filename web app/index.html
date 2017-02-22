@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+		
+	</head>
+	<body>
+	    <div id="root" class="container">
+	        <div id="fiction_chapter_title"></div>
+	        <div id="fiction_container" class="m-read-content">
+	           
+            </div>
+		        <div class="m-button-bar">
+		            <ul class="u-tab">
+		                <li id="prev_button">上一章</li>
+		                <li id="next_button">下一章</li>
+		            </ul>
+		        </div>
+	        
+	        <!-- 以下为浮层层部分 -->
+	        <div class="action" id="action" ></div>
+	        <div id="top-nav" class="top-nav" style="display:none">
+	       	< 返回书架
+	        </div>
+	        <div  class="bottom-nav-bk bottom_nav" style="display:none"> </div>
+	        <div id="bottom-nav" class="bottom-nav bottom_nav" style="display:none">
+		       	<div class="catalog item">
+		       		<div class="catalog-icon icon"></div>
+		       		<div class="word">目录</div>
+		       	</div>
+		       	<div class="font item">
+		       		<div class="font-icon icon"></div>
+		       		<div class="word">字体</div>
+		       	</div>
+		       	<div class="day-night item">
+		       		<div class="day">
+		       			<div class="day-icon icon"></div>
+		       			<div class="word">白天</div>
+		       		</div>
+		       		<div class="night ">
+		       			<div class="night-icon icon"></div>
+		       			<div class="word">夜晚</div>
+		       		</div>	
+		       	</div>
+	        </div>	
+	        <div class="nav-pannel-bk font-container" style="display:none"></div>
+	       	<div id="font-container" class="nav-pannel font-container" style="display:none">
+	       		<div class="child-mod font-change">
+	       			<span>字号</span>
+	       			<button id="large-font" class="font-size-button">大</button>
+	       			<button id="small-font" class="font-size-button">小</button>
+	       		</div>
+	       		<div class="child-mod bk-change">
+	       			<span>背景</span>
+	       			<div class="bk-container">
+	       			</div>
+	       			<div class="bk-container"></div>
+	       			<div class="bk-container"></div>
+	       			<div class="bk-container"></div>
+	       			<div class="bk-container"></div>
+	       		</div>
+		    </div>
+	    </div>  
+		
+		<script src="lib/zepto.min.js"></script>
+		<script>
+			window.jQuery = $;
+		</script>
+		<script src="js/jquery.base64.js"></script>
+		<script src="js/jquery.jsonp.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
