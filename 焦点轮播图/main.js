@@ -13,13 +13,24 @@ var delay=10;
 var animated=false;
 
 next.onclick=function(){
-	index++;
-	render();
+	if (index == 5) {
+	    index = 1;
+	}
+	else {
+	    index += 1;
+	}
+	
+	render(-1*width);
 	showBtn();
 	}
 prev.onclick=function(){
-	index--;
-	render();
+	if (index == 1) {
+	    index = 5;
+	}
+	else {
+	    index -= 1;
+	}
+	render(width);
 	showBtn();
 	}
 
@@ -31,23 +42,20 @@ for(var i=0;i<buttons.length;i++){
 		}
 }
 //移动函数
-function render(){
+function render(distance){
 	
 	var count=0;
 	//根据目标位置和当前位置的差值，求得速度（带正负号）
-	var speed=(-width*index-list.offsetLeft)/step;
+	var speed=distance/step;
 	timer=setInterval(function(){
 		list.style.left=list.offsetLeft+speed+"px";
 		count++;
 		if(count==step){//当步数达到后，清除时钟
 		clearInterval(timer);
+		if(list.offsetLeft==-3600){list.style.left=-600+"px";}
+		if(list.offsetLeft==0){list.style.left=-3000+"px";}
 		}
-	},delay)
-	//当移动到副图之后，回到主图
-	setTimeout(function(){
-		if(list.offsetLeft==-3600){list.style.left=-600+"px";index=1;showBtn();}
-		if(list.offsetLeft==0){list.style.left=-3000+"px";index=5;showBtn();}
-	},step*delay+1);
+	},delay);
 }
 //渲染底部的索引
 function showBtn(){
@@ -55,4 +63,4 @@ function showBtn(){
 		buttons[i].className="";
 		}
 		buttons[index-1].className="selected";
-	}
+}
