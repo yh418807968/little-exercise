@@ -85,7 +85,7 @@ function updateData(){
     $('.number-cell').css('font-size',0.6*cellSideLength+'px');
 }
 $(document).keydown(function(e){
-	 event.preventDefault();
+	 e.preventDefault();
 	switch(e.keyCode){
 		case 37:
 			dir=0;
@@ -119,6 +119,7 @@ document.addEventListener('touchstart',function(event){
 });
 
 document.addEventListener('touchend',function(event){
+	 event.preventDefault();
     endx = event.changedTouches[0].pageX;
     endy = event.changedTouches[0].pageY;
 
