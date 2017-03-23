@@ -5,11 +5,11 @@ cellSideLength = 0.18 * documentWidth;
 cellSpace = 0.04 * documentWidth;
 
 function getTop( i , j ){
-    return cellSpace + i*(cellSpace+cellSideLength);
+    return cellSpace + i*(cellSpace+cellSideLength) ;
 }
 
 function getLeft( i , j ){
-    return cellSpace + j*(cellSpace+cellSideLength);
+    return cellSpace + j*(cellSpace+cellSideLength) ;
 }
 //颜色数字信息
 function getBackground(num){

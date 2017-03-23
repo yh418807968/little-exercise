@@ -200,7 +200,7 @@ function moveLeft(){
 	}
 	step += 1;
     updateStep( step);
-	setTimeout("updateData()",200);
+	setTimeout(updateData,200);
 	return true;
 }
 function moveRight(){
@@ -249,7 +249,7 @@ function moveUp(){
 				for(var k=0;k<i;k++){
 					if(board[k][j]==0&&noBlock(i,j,k,dir)){
 						//移动
-						showMoveAnimation(i,j,i,k);
+						showMoveAnimation(i,j,k,j);
 						board[k][j]=board[i][j];
 						board[i][j]=0;
 
@@ -257,7 +257,7 @@ function moveUp(){
 						//updateData();
 					}else if(board[k][j]==board[i][j]&&noBlock(i,j,k,dir)&&!hasConflicted[i][j]){
 						//相加
-						showMoveAnimation(i,j,i,k);
+						showMoveAnimation(i,j,k,j);
 						board[k][j]=2*board[i][j];
 						board[i][j]=0;
 						score += board[i][k];
@@ -282,17 +282,17 @@ function moveDown(){
 	for(var j=0;j<4;j++){
 		for(var i=0;i<3;i++){
 			if(board[i][j]!=0){
-				for(var k=i+1;k<4;k++){
+				for(var k=3;k>i;k--){
 					if(board[k][j]==0&&noBlock(i,j,k,dir)){
 						//移动
-						showMoveAnimation(i,j,i,k);
+						showMoveAnimation(i,j,k,j);
 						board[k][j]=board[i][j];
 						board[i][j]=0;
 						break;
 						//updateData();
 					}else if(board[k][j]==board[i][j]&&noBlock(i,j,k,dir)&&!hasConflicted[i][j]){
 						//相加
-						showMoveAnimation(i,j,i,k);
+						showMoveAnimation(i,j,k,j);
 						board[k][j]=2*board[i][j];
 						board[i][j]=0;
 						score += board[i][k];

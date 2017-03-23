@@ -9,8 +9,8 @@
 function showMoveAnimation(fromX,fromY,toX,toY){
 	var numberCell = $('#number-cell-' + fromX + '-' + fromY);
 	numberCell.animate({
-		top:getTop( fromX , fromY ),
-		left:getLeft( fromX , fromY)
+		top:getTop( toX , toY )+"px",
+		left:getLeft( toX , toY)+"px"
 		},200);
 	}
 function showNumberAnimation( i , j , randNumber ){
@@ -22,10 +22,10 @@ function showNumberAnimation( i , j , randNumber ){
     numberCell.text( randNumber );
 
     numberCell.animate({
-        width:cellSideLength,
-        height:cellSideLength,
-        top:getTop( i , j ),
-        left:getLeft( i , j )
+        width:cellSideLength+"px",
+        height:cellSideLength+"px",
+        top:getTop( i , j )+"px",
+        left:getLeft( i , j )+"px"
     },50);
 }
 function updateScore( score ){
