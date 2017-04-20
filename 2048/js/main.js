@@ -281,7 +281,7 @@ function moveDown(){
 		return false;
 	}
 	for(var j=0;j<4;j++){
-		for(var i=0;i<3;i++){
+		for(var i=2;i>=0;i--){
 			if(board[i][j]!=0){
 				for(var k=3;k>i;k--){
 					if(board[k][j]==0&&noBlock(i,j,k,dir)){
